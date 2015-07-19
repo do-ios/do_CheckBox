@@ -10,31 +10,31 @@
 	<string>Do_Test</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E2210182D7CAA211D94E1A02A0B7BC9099908EC9</key>
-		<string>http://d1web.deviceone.net:8080/r/IOS.git</string>
+		<key>E779465F8D6C3DBD857CCD2FAC61D6D34B93B78F</key>
+		<string>https://github.com/do-ios/do_CheckBox.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>doExt/Do_Test/Do_Test.xcodeproj</string>
+	<string>Do_Test.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E2210182D7CAA211D94E1A02A0B7BC9099908EC9</key>
-		<string>../../../..</string>
+		<key>E779465F8D6C3DBD857CCD2FAC61D6D34B93B78F</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://d1web.deviceone.net:8080/r/IOS.git</string>
+	<string>https://github.com/do-ios/do_CheckBox.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E2210182D7CAA211D94E1A02A0B7BC9099908EC9</string>
+	<string>E779465F8D6C3DBD857CCD2FAC61D6D34B93B78F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E2210182D7CAA211D94E1A02A0B7BC9099908EC9</string>
+			<string>E779465F8D6C3DBD857CCD2FAC61D6D34B93B78F</string>
 			<key>IDESourceControlWCCName</key>
-			<string>IOS</string>
+			<string>do_CheckBox</string>
 		</dict>
 	</array>
 </dict>

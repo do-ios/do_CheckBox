@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		771403A31B565F4F00FC3112 /* do_CheckBox_UIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 771403A01B565F4F00FC3112 /* do_CheckBox_UIModel.m */; };
 		771403A41B565F4F00FC3112 /* do_CheckBox_UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 771403A21B565F4F00FC3112 /* do_CheckBox_UIView.m */; };
-		771403C41B5B355F00FC3112 /* cb_green_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 771403C21B5B355F00FC3112 /* cb_green_on.png */; };
-		771403C51B5B355F00FC3112 /* cb_green_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771403C31B5B355F00FC3112 /* cb_green_on@2x.png */; };
-		771403C81B5B380D00FC3112 /* cb_green_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 771403C61B5B380D00FC3112 /* cb_green_off.png */; };
-		771403C91B5B380D00FC3112 /* cb_green_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 771403C71B5B380D00FC3112 /* cb_green_off@2x.png */; };
+		7794C98F1B5B9D4000CFB2A4 /* do_CheckBox_UIModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7714039F1B565F4F00FC3112 /* do_CheckBox_UIModel.h */; };
+		7794C9901B5B9D4000CFB2A4 /* do_CheckBox_UIView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 771403A11B565F4F00FC3112 /* do_CheckBox_UIView.h */; };
 		A44BC6701AEE005E001580AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC66F1AEE005E001580AA /* main.m */; };
 		A44BC6731AEE005E001580AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6721AEE005E001580AA /* AppDelegate.m */; };
 		A44BC6761AEE005E001580AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC6751AEE005E001580AA /* ViewController.m */; };
@@ -59,6 +57,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7794C98F1B5B9D4000CFB2A4 /* do_CheckBox_UIModel.h in CopyFiles */,
+				7794C9901B5B9D4000CFB2A4 /* do_CheckBox_UIView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,10 +70,6 @@
 		771403A01B565F4F00FC3112 /* do_CheckBox_UIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = do_CheckBox_UIModel.m; sourceTree = "<group>"; };
 		771403A11B565F4F00FC3112 /* do_CheckBox_UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_CheckBox_UIView.h; sourceTree = "<group>"; };
 		771403A21B565F4F00FC3112 /* do_CheckBox_UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = do_CheckBox_UIView.m; sourceTree = "<group>"; };
-		771403C21B5B355F00FC3112 /* cb_green_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_green_on.png; sourceTree = SOURCE_ROOT; };
-		771403C31B5B355F00FC3112 /* cb_green_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_green_on@2x.png"; sourceTree = SOURCE_ROOT; };
-		771403C61B5B380D00FC3112 /* cb_green_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cb_green_off.png; sourceTree = SOURCE_ROOT; };
-		771403C71B5B380D00FC3112 /* cb_green_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cb_green_off@2x.png"; sourceTree = SOURCE_ROOT; };
 		A44BC66A1AEE005E001580AA /* Do_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Do_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A44BC66E1AEE005E001580AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A44BC66F1AEE005E001580AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -246,10 +242,6 @@
 		A44BC66C1AEE005E001580AA /* Do_Test */ = {
 			isa = PBXGroup;
 			children = (
-				771403C61B5B380D00FC3112 /* cb_green_off.png */,
-				771403C71B5B380D00FC3112 /* cb_green_off@2x.png */,
-				771403C21B5B355F00FC3112 /* cb_green_on.png */,
-				771403C31B5B355F00FC3112 /* cb_green_on@2x.png */,
 				A44BC6B41AEE00A2001580AA /* doCore */,
 				A44BC6931AEE008D001580AA /* doFrame */,
 				A44BC6711AEE005E001580AA /* AppDelegate.h */,
@@ -488,10 +480,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				771403C81B5B380D00FC3112 /* cb_green_off.png in Resources */,
-				771403C51B5B355F00FC3112 /* cb_green_on@2x.png in Resources */,
-				771403C41B5B355F00FC3112 /* cb_green_on.png in Resources */,
-				771403C91B5B380D00FC3112 /* cb_green_off@2x.png in Resources */,
 				A4A1A01D1AF0F83700D835A5 /* do_Test.json in Resources */,
 				A44BC67B1AEE005E001580AA /* Images.xcassets in Resources */,
 			);
