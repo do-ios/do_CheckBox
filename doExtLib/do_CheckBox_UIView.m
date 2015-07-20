@@ -64,8 +64,8 @@ static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXN
     //重新调整视图的x,y,w,h
     [doUIModuleHelper OnRedraw:_model];
     CGRect r = self.frame;
-    _imgStatus.frame = CGRectMake(2, 2, CGRectGetHeight(r)-4, CGRectGetHeight(r)-4);
-    _text.frame = CGRectMake(CGRectGetMinX(_imgStatus.frame)+CGRectGetWidth(_imgStatus.frame)+5,CGRectGetMinY(_imgStatus.frame),CGRectGetWidth(r)-CGRectGetWidth(_imgStatus.frame)-9,CGRectGetHeight(_imgStatus.frame));
+    _imgStatus.frame = CGRectMake(5, (CGRectGetHeight(r)-30)/2, 30, 30);
+    _text.frame = CGRectMake(CGRectGetMinX(_imgStatus.frame)+CGRectGetWidth(_imgStatus.frame)+5,2,CGRectGetWidth(r)-CGRectGetWidth(_imgStatus.frame)-15,CGRectGetHeight(r)-4);
 }
 
 #pragma mark - TYPEID_IView协议方法（必须）
@@ -84,6 +84,10 @@ static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXN
     NSString *string = [newValue boolValue]?img_on:img_off;
     NSData *i = [[NSData alloc] initWithBase64EncodedString:string options:NSDataBase64DecodingIgnoreUnknownCharacters];
     _imgStatus.image = [UIImage imageWithData:i];
+    
+    doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
+    [_invokeResult SetResultBoolean:_isChecked];
+    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
 }
 - (void)change_enabled:(NSString *)newValue
 {
@@ -161,11 +165,7 @@ static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXN
     if (!self.userInteractionEnabled) {
         return;
     }
-    [self change_checked:[@(!_isChecked) stringValue]];
-    doInvokeResult * _invokeResult;
-    _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
-    [_invokeResult SetResultBoolean:!_isChecked];
-    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
+    [_model SetProperties:[NSMutableDictionary dictionaryWithObject:[@(!_isChecked) stringValue] forKey:@"checked"]];
 }
 
 #pragma mark - doIUIModuleView协议方法（必须）<大部分情况不需修改>
