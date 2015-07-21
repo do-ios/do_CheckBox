@@ -14,10 +14,6 @@
 #import "doIScriptEngine.h"
 #import "doTextHelper.h"
 
-static NSString *img_on = @"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";
-
-static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAABxpRE9UAAAAAgAAAAAAAAALAAAAKAAAAAsAAAALAAACB9dQ++IAAAHTSURBVEgNlFLJTgJBEJ2D/pbLWRQUEDf0AzQhKho1xMDBizFGoxBlG2DUuKEDA56MRA/ggsvX6LGsVz1tDIkHDy/VXcurV9VtNBrUdduI7983F6n5EqVWe5Ge3pcFz+8r9PKxSo9vS4QzoGPif41S83WF6xa4bokeWlG6u48n2+12t1E8nfVadvgzdeGh7LWPclU/FZ0xKtXGGZNk1cJicTdrISqIX8XgQ262MkIZe5jSZQ+V7Jkv62TOZ2zs9c8fXg5SjgMAEo9uwowZ1+KsUKxPkVWf/hVXOdK0Mir1qTMPJXZ65421zZ7IwfkgmRwoVENCbDEByEAEe+w20VY3RRPkgjjPtRAGkbGtvogR2+qJZK68Qpx3ApStsnJeB6zJFudOmNWg6wsSanJ8x6QgPigPUWLXJVar8FPBUaqhHAo6of0g1jE9Je5mJUDpSy+tsVhjfbtPFOf5AfBYJYdH+weKzoTUoQEUgxicsgqtGCOJGlauxsXICqKQ/aLMzdP5yEWDnO13d8yKsWO8JMaQVWAd/0ZAPaAdFOIfxWleOLrp/6vGwx/lMXktsJ3QfvwInPHAsmPmglgDi06eDwgx9qSBJvphcNb3v+LwQ1ym7BPibwAAAP//3wh7owAAAeRJREFUpVFLTxNhFP12rl21P6A74x6TSkho+i4iQpGfwGrSBQk2hIQ0UcBpHaalUNrpA8rLgKXgf+H7N9dzrozMxo1Ocue+zj338Zktd9Y5uV2QwbQspz/X/llGDx8luHsv3R/vZKcx7xj+6JxMFqX/UBYChtD9+1XVQ+qojVw0T1xY0wPH8feSbDfmHLPtzjl02G0wXZbgfkX14En/9ssSYCNuRT8U4sOa/nRJOdrXReEVzMZu0vEv89KbLGkhAQRTR+UPyd0HEDxLiGG+M1mQFriUuLo76zQvi3KMO3PqqLBZ1A9trhza1CGOJ21dFKSKK+jE3jgnzauCHp7J7u3isx31/xbnG2EwnsE7zwuvYCq1N05jmNFOR7h156akgM4NGjwVsOgI8RYKtTHixDHO96GwltN6o7zwCmbzy9tKvZ8R7xRTo5vKRU4OcZ5DbNG+KqnNd2gyjhgbHADLTYkL676NsuIGaanUZipmq5Ze/9rLyV43pUEmfRS4g6w288cFOTjLI1ZQqSPPIRirD3NquxisAfx+Ny3k2thJrZtkMvny0+dM2w2yj/tB2qKjBbkF0PrjosVqaoPIgtCCxPqIecgTQ2HNXi9lQfxYBRc5Db9EIvEiHo+/isVir/9HyEEucv4C2kidCQj5FesAAAAASUVORK5CYII=";
-
 #define FONT_OBLIQUITY 15.0
 
 @implementation do_CheckBox_UIView
@@ -34,9 +30,7 @@ static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXN
 - (void) LoadView: (doUIModule *) _doUIModule
 {
     _model = (typeof(_model)) _doUIModule;
-    
-    NSData *i = [[NSData alloc] initWithBase64EncodedString:img_on options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    _imgStatus = [[UIImageView alloc] initWithImage:[UIImage imageWithData:i]];
+    _imgStatus = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"do_CheckBox_UI.bundle/check_on"]];
     _text = [UILabel new];
     _text.textAlignment = NSTextAlignmentLeft;
     _text.numberOfLines = 1;
@@ -81,10 +75,13 @@ static NSString *img_off = @"iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXN
 {
     //自己的代码实现
     _isChecked = [newValue boolValue];
-    NSString *string = [newValue boolValue]?img_on:img_off;
-    NSData *i = [[NSData alloc] initWithBase64EncodedString:string options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    _imgStatus.image = [UIImage imageWithData:i];
-    
+    if ([newValue boolValue]) {
+        _imgStatus.image = [UIImage imageNamed:@"do_CheckBox_UI.bundle/check_on"];
+    }
+    else
+    {
+        _imgStatus.image = [UIImage imageNamed:@"do_CheckBox_UI.bundle/check_off"];
+    }
     doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
     [_invokeResult SetResultBoolean:_isChecked];
     [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];

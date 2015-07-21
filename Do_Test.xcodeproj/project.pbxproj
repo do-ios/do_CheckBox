@@ -65,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B758D341B5E1E5F00CB5F3B /* do_CheckBox_UI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = do_CheckBox_UI.bundle; sourceTree = "<group>"; };
 		7714039E1B565F4F00FC3112 /* do_CheckBox_IView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_CheckBox_IView.h; sourceTree = "<group>"; };
 		7714039F1B565F4F00FC3112 /* do_CheckBox_UIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = do_CheckBox_UIModel.h; sourceTree = "<group>"; };
 		771403A01B565F4F00FC3112 /* do_CheckBox_UIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = do_CheckBox_UIModel.m; sourceTree = "<group>"; };
@@ -361,6 +362,7 @@
 				771403A01B565F4F00FC3112 /* do_CheckBox_UIModel.m */,
 				771403A11B565F4F00FC3112 /* do_CheckBox_UIView.h */,
 				771403A21B565F4F00FC3112 /* do_CheckBox_UIView.m */,
+				3B758D341B5E1E5F00CB5F3B /* do_CheckBox_UI.bundle */,
 				A4A1A01C1AF0F82B00D835A5 /* do_Test.json */,
 			);
 			path = doExtLib;
