@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A44BC7B11AEE19CC001580AA"
-               BuildableName = "libdoExtLib.a"
+               BuildableName = "libdoCheckBox.a"
                BlueprintName = "doExtLib"
                ReferencedContainer = "container:Do_Test.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A44BC7B11AEE19CC001580AA"
-            BuildableName = "libdoExtLib.a"
+            BuildableName = "libdoCheckBox.a"
             BlueprintName = "doExtLib"
             ReferencedContainer = "container:Do_Test.xcodeproj">
          </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A44BC7B11AEE19CC001580AA"
-            BuildableName = "libdoExtLib.a"
+            BuildableName = "libdoCheckBox.a"
             BlueprintName = "doExtLib"
             ReferencedContainer = "container:Do_Test.xcodeproj">
          </BuildableReference>
