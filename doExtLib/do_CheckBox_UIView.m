@@ -13,6 +13,7 @@
 #import "doScriptEngineHelper.h"
 #import "doIScriptEngine.h"
 #import "doTextHelper.h"
+#import "doDefines.h"
 
 #define FONT_OBLIQUITY 15.0
 
@@ -24,6 +25,8 @@
     NSString *_myFontStyle;
     NSString *_myFontFlag;
     BOOL _isChecked;
+    
+    int _intFontSize;
 }
 #pragma mark - doIUIModuleView协议方法（必须）
 //引用Model对象
@@ -34,12 +37,12 @@
     _text = [UILabel new];
     _text.textAlignment = NSTextAlignmentLeft;
     _text.numberOfLines = 1;
-    
+
     [self change_checked:[_model GetProperty:@"checked"].DefaultValue];
     [self change_enabled:[_model GetProperty:@"enabled"].DefaultValue];
     [self change_fontColor:[_model GetProperty:@"fontColor"].DefaultValue];
     [self change_fontSize:[_model GetProperty:@"fontSize"].DefaultValue];
-    
+
     [self addSubview:_imgStatus];
     [self addSubview:_text];
 }
@@ -61,6 +64,8 @@
     CGRect r = self.frame;
     _imgStatus.frame = CGRectMake(5, (CGRectGetHeight(r)-30)/2, 30, 30);
     _text.frame = CGRectMake(CGRectGetMinX(_imgStatus.frame)+CGRectGetWidth(_imgStatus.frame)+5,2,CGRectGetWidth(r)-CGRectGetWidth(_imgStatus.frame)-15,CGRectGetHeight(r)-4);
+
+    [self layoutSubviews];
 }
 
 #pragma mark - TYPEID_IView协议方法（必须）
@@ -101,8 +106,13 @@
 - (void)change_fontSize:(NSString *)newValue
 {
     //自己的代码实现
-    int _intFontSize = [doUIModuleHelper GetDeviceFontSize:[[doTextHelper Instance] StrToInt:newValue :[[_model GetProperty:@"fontSize"].DefaultValue intValue]] :_model.XZoom :_model.YZoom];
-    _text.font = [UIFont systemFontOfSize:_intFontSize];;
+    _intFontSize = [doUIModuleHelper GetDeviceFontSize:[[doTextHelper Instance] StrToInt:newValue :[[_model GetProperty:@"fontSize"].DefaultValue intValue]] :_model.XZoom :_model.YZoom];
+    _text.font = [UIFont systemFontOfSize:_intFontSize];
+    
+    if(_myFontStyle)
+        [self change_fontStyle:_myFontStyle];
+    if (_myFontFlag)
+        [self change_textFlag:_myFontFlag];
 }
 - (void)change_fontStyle:(NSString *)newValue
 {
@@ -141,6 +151,9 @@
 {
     //自己的代码实现
     _myFontFlag = [NSString stringWithFormat:@"%@",newValue];
+    if (!IOS_8 && _intFontSize < 14) {
+        return;
+    }
     if (_text.text==nil || [_text.text isEqualToString:@""]) return;
 
     NSMutableAttributedString *content = [_text.attributedText mutableCopy];
