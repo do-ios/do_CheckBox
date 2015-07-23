@@ -52,6 +52,7 @@
     //自定义的全局属性,view-model(UIModel)类销毁时会递归调用<子view-model(UIModel)>的该方法，将上层的引用切断。所以如果self类有非原生扩展，需主动调用view-model(UIModel)的该方法。(App || Page)-->强引用-->view-model(UIModel)-->强引用-->view
     _model = nil;
     _myFontStyle = nil;
+    _myFontFlag = nil;
     _imgStatus = nil;
     _text = nil;
 }
