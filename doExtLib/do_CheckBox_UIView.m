@@ -33,6 +33,7 @@
 - (void) LoadView: (doUIModule *) _doUIModule
 {
     _model = (typeof(_model)) _doUIModule;
+
     _imgStatus = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"do_CheckBox_UI.bundle/check_on"]];
     _text = [UILabel new];
     _text.textAlignment = NSTextAlignmentLeft;
@@ -41,6 +42,8 @@
     [self change_checked:[_model GetProperty:@"checked"].DefaultValue];
     [self change_enabled:[_model GetProperty:@"enabled"].DefaultValue];
     [self change_fontColor:[_model GetProperty:@"fontColor"].DefaultValue];
+    [self change_fontStyle:[_model GetProperty:@"fontStyle"].DefaultValue];
+    [self change_textFlag:[_model GetProperty:@"textFlag"].DefaultValue];
     [self change_fontSize:[_model GetProperty:@"fontSize"].DefaultValue];
 
     [self addSubview:_imgStatus];
@@ -133,11 +136,6 @@
         [_text setFont:[ UIFont fontWithDescriptor :desc size :fontSize]];
     }
     else if([newValue isEqualToString:@"bold_italic"]){}
-    else
-    {
-        NSString *mesg = [NSString stringWithFormat:@"不支持字体:%@",newValue];
-        [NSException raise:@"do_CheckBox" format:mesg,@""];
-    }
 }
 - (void)change_text:(NSString *)newValue
 {
