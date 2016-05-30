@@ -48,6 +48,8 @@
 
     [self addSubview:_imgStatus];
     [self addSubview:_text];
+    
+    self.clipsToBounds = YES;
 }
 //销毁所有的全局对象
 - (void) OnDispose
