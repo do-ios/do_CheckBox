@@ -94,9 +94,9 @@
     {
         _imgStatus.image = [UIImage imageNamed:@"do_CheckBox_UI.bundle/check_off"];
     }
-    doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
-    [_invokeResult SetResultBoolean:_isChecked];
-    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
+//    doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
+//    [_invokeResult SetResultBoolean:_isChecked];
+//    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
 }
 - (void)change_enabled:(NSString *)newValue
 {
