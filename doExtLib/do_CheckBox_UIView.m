@@ -27,6 +27,8 @@
     BOOL _isChecked;
     
     int _intFontSize;
+    
+    BOOL _isTouch;
 }
 #pragma mark - doIUIModuleView协议方法（必须）
 //引用Model对象
@@ -50,6 +52,8 @@
     [self addSubview:_text];
     
     self.clipsToBounds = YES;
+    
+    _isTouch = NO;
 }
 //销毁所有的全局对象
 - (void) OnDispose
@@ -94,9 +98,12 @@
     {
         _imgStatus.image = [UIImage imageNamed:@"do_CheckBox_UI.bundle/check_off"];
     }
-//    doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
-//    [_invokeResult SetResultBoolean:_isChecked];
-//    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
+    if (!_isTouch) {
+        return;
+    }
+    doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
+    [_invokeResult SetResultBoolean:_isChecked];
+    [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
 }
 - (void)change_enabled:(NSString *)newValue
 {
@@ -177,7 +184,9 @@
     if (!self.userInteractionEnabled) {
         return;
     }
+    _isTouch = YES;
     [_model SetProperties:[NSMutableDictionary dictionaryWithObject:[@(!_isChecked) stringValue] forKey:@"checked"]];
+    _isTouch = NO;
 }
 
 #pragma mark - doIUIModuleView协议方法（必须）<大部分情况不需修改>
