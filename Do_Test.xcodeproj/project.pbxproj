@@ -11,6 +11,7 @@
 		771403A41B565F4F00FC3112 /* do_CheckBox_UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 771403A21B565F4F00FC3112 /* do_CheckBox_UIView.m */; };
 		7742636A1B5F403C00EC1B72 /* do_CheckBox_UI.bundle in Sources */ = {isa = PBXBuildFile; fileRef = 3B758D341B5E1E5F00CB5F3B /* do_CheckBox_UI.bundle */; };
 		774263AD1B5F44DA00EC1B72 /* do_CheckBox_IView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7714039E1B565F4F00FC3112 /* do_CheckBox_IView.h */; };
+		7777C3CA1D78333300C6C632 /* do_CheckBox_UI.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B758D341B5E1E5F00CB5F3B /* do_CheckBox_UI.bundle */; };
 		7794C98F1B5B9D4000CFB2A4 /* do_CheckBox_UIModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7714039F1B565F4F00FC3112 /* do_CheckBox_UIModel.h */; };
 		7794C9901B5B9D4000CFB2A4 /* do_CheckBox_UIView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 771403A11B565F4F00FC3112 /* do_CheckBox_UIView.h */; };
 		A44BC6701AEE005E001580AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A44BC66F1AEE005E001580AA /* main.m */; };
@@ -59,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7777C3CA1D78333300C6C632 /* do_CheckBox_UI.bundle in CopyFiles */,
 				774263AD1B5F44DA00EC1B72 /* do_CheckBox_IView.h in CopyFiles */,
 				7794C98F1B5B9D4000CFB2A4 /* do_CheckBox_UIModel.h in CopyFiles */,
 				7794C9901B5B9D4000CFB2A4 /* do_CheckBox_UIView.h in CopyFiles */,
