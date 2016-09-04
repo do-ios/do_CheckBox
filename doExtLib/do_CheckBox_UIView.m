@@ -98,9 +98,9 @@
     {
         _imgStatus.image = [UIImage imageNamed:@"do_CheckBox_UI.bundle/check_off"];
     }
-    if (!_isTouch) {
-        return;
-    }
+
+    [_model SetPropertyValue:@"checked" :[@(_isChecked) stringValue]];
+
     doInvokeResult * _invokeResult = [[doInvokeResult alloc]init:_model.UniqueKey];
     [_invokeResult SetResultBoolean:_isChecked];
     [_model.EventCenter FireEvent:@"checkChanged":_invokeResult];
@@ -184,9 +184,7 @@
     if (!self.userInteractionEnabled) {
         return;
     }
-    _isTouch = YES;
-    [_model SetProperties:[NSMutableDictionary dictionaryWithObject:[@(!_isChecked) stringValue] forKey:@"checked"]];
-    _isTouch = NO;
+    [self change_checked:[@(!_isChecked) stringValue]];
 }
 
 #pragma mark - doIUIModuleView协议方法（必须）<大部分情况不需修改>
